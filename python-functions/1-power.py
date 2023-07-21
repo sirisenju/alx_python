@@ -1,8 +1,8 @@
 # !/usr/bin/python3
 def pow(a, b):
-    if b >= 1:
-        return pow(a, b)
-    elif b == 0:
+    if b == 0:
         return 1
-    else:
+    elif b < 0:
         return 1 / pow(a, -b)
+    else:
+        return(pow(a, b))
