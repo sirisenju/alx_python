@@ -3,6 +3,6 @@ def pow(a, b):
     if b == 0:
         return 1
     elif b < 0:
-        return 1 / pow(a, -b)
+        return 1 / (a ** -b)
     else:
-        return(pow(a, b))
+        return a ** b
