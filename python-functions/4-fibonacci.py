@@ -3,7 +3,7 @@ def fibonacci_sequence(n):
     lst = []
     a, b = 0, 1
 
-    for i in range(0, n):
+    for i in range(n):
         lst.append(a)
         a, b - b, a + b
 
