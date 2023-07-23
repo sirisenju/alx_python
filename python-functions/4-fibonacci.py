@@ -5,6 +5,6 @@ def fibonacci_sequence(n):
 
     for _ in range(n):
         lst.append(a)
-        a, b - b, a + b
+        a, b = b, a + b
 
     return lst
