@@ -4,7 +4,7 @@ def raise_exception():
     try:
         raise TypeError("Exception has been raised")
     except TypeError as e:
-        print("Exception:", e)
+        print(e)
 
 
 if __name__ == "__main__":
