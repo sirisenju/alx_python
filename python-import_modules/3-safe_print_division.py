@@ -7,7 +7,7 @@ def safe_print_division(a, b):
       print("Inside result: {}".format(None))
       print("{} / {} = {}".format(a, b, None))
    finally:
-      return "Inside result: {}".format(a)
+      return "Inside result: {}".format( a / b)
    
 
 a = 9
