@@ -1,13 +1,13 @@
 # !/usr/bin/python3
 
 def safe_print_division(a, b):
+   result = None
    try:
      result = a / b
    except ZeroDivisionError:
-      print("Inside result: {}".format(None))
-      print("{:d} / {:d} = {}".format(a, b, None))
+      return None
    finally:
-      return "Inside result: {}".format()
+      return "Inside result: {}".format(result)
    
    return result
    
