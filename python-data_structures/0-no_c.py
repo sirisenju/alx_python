@@ -1,10 +1,11 @@
 # !/usr/bin/python3
 
 def no_c(my_string):
-    for i in my_string:
+    arr = [my_string]
+    for i in arr:
         if i == "c" or i == "C":
-            my_string.pop(i)
-            return my_string
+            arr.pop(i)
+            return "{}".format(arr)
     return my_string
 
 
