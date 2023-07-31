@@ -6,7 +6,6 @@ def no_c(my_string):
         if i == "c" or i == "C":
             arr.pop(i)
             return "{}".format(arr)
-    return my_string
 
 
 if __name__ == "__main__":
