@@ -1,7 +1,7 @@
 # !/usr/bin/python3
 
 def no_c(my_string):
-    lst = [i for i in my_string if i != "c" or "C"]
+    lst = [i for i in my_string if i != "c"]
     newStr = "".join(lst)
     return newStr
 
