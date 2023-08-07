@@ -8,7 +8,7 @@ def multiple_returns(sentence):
     first = sentence[0]
     newTuple = (length, first)
 
-    return "Length: {:d} - First character: {}".format(newTuple[0], newTuple[1])
+    return newTuple
 
 
 if __name__ == "__main__":
