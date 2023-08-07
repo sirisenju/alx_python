@@ -1,8 +1,9 @@
 # !/usr/bin/python3
 
 def multiple_returns(sentence):
+    newTuple = ()
     if sentence == "":
-        return None
+        return newTuple(None)
     
     length = len(sentence)
     first = sentence[0]
