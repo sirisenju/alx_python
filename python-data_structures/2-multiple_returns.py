@@ -1,7 +1,7 @@
 # !/usr/bin/python3
 
 def multiple_returns(sentence):
-    if sentence == " " or sentence == "":
+    if sentence == "":
         return None
     
     length = len(sentence)
