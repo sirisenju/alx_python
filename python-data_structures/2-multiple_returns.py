@@ -1,9 +1,6 @@
 # !/usr/bin/python3
 
 def multiple_returns(sentence):
-
-    length = len(sentence)
-    first = sentence[0]
     newTuple = (length, first)
 
     if sentence == "":
@@ -11,6 +8,8 @@ def multiple_returns(sentence):
         first = None
         return newTuple
 
+    length = len(sentence)
+    first = sentence[0]
     return newTuple
 
 
