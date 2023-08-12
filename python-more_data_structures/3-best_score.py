@@ -1,13 +1,18 @@
 # !/usr/bin/python3
 
 def best_score(a_dictionary):
-    for value in a_dictionary.values():
-        if value == None:
-            return None
-        
-    max_values = max(a_dictionary.values())
-    result = [key for key in a_dictionary if (a_dictionary[key] == max_values)]
-    return "Best score: {}".format(result)
+    if not a_dictionary:
+        return None
+    
+    max_key = None
+    max_value = float('-inf')  # Initialize to negative infinity
+    
+    for key, value in a_dictionary.items():
+        if isinstance(value, int) and value > max_value:
+            max_key = key
+            max_value = value
+    
+    return max_key
 
 
 if __name__ == "__main__":
