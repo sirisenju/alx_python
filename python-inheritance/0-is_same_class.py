@@ -1,20 +1,23 @@
 # !/usr/bin/python3
 
 class AlxClass:
-    """
-    This is an empty class.
-    It serves as a placeholder and does nothing.
+    """The summary line for a class docstring should fit on one line.
+
+    If the class has public attributes, they may be documented here
+    in an ``Attributes`` section and follow the same formatting as a
+    function's ``Args`` section. Alternatively, attributes may be documented
+    inline with the attribute's declaration (see __init__ method below).
+
+    Properties created with the ``@property`` decorator should be documented
+    in the property's getter method.
+
+    Attributes:
+        attr1 (str): Description of `attr1`.
+
     """
     pass
 
 
 def is_same_class(obj, a_class):
-    """
-    Check if an object is exactly an instance of the specified class.
-
-    :param obj: The object to check.
-    :param a_class: The class to compare with.
-    :return: True if obj is an instance of a_class; otherwise False.
-    """
     return type(obj) is a_class
 
