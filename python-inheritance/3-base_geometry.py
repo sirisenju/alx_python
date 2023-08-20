@@ -4,8 +4,5 @@
 """
 
 class BaseGeometry:
-    """
-    This is an empty class.
-    It serves as a placeholder and does nothing.
-    """
+    """ This is an empty class. """
     pass
