@@ -1,44 +1,41 @@
-class BaseGeometry:
-    def area(self):
-        """Raises a NotImplementedError because subclasses must implement the 'area' method."""
-        raise NotImplementedError(
-            "Subclasses must implement the 'area' method.")
+#!/usr/bin/python3
+"""
+    class Rectangle that inherits from BaseGeometry
+    (7-base_geometry.py). (task based on 8-rectangle.py)
 
-    def integer_validator(self, name, value):
-        """
-        Validates that a value is an integer greater than 0.
+    Instantiation with width and height: def
+    __init__(self, width, height)::
+        width and height must be private.
+        No getter or setter
+        width and height must be positive
+        integers validated by integer_validator
+    the area() method must be implemented
+    print() should print, and str() should return,
+    the following rectangle description:
+    [Rectangle] <width>/<height>
+"""
 
-        Args:
-            name (str): The name of the value being validated.
-            value (int): The value to validate.
 
-        Raises:
-            TypeError: If the value is not an integer.
-            ValueError: If the value is not greater than 0.
-        """
-        if not isinstance(value, int):
-            raise TypeError(f"{name} must be an integer")
-        if value <= 0:
-            raise ValueError(f"{name} must be greater than 0")
+BaseGeometry = __import__('7-base_geometry').BaseGeometry
 
 
 class Rectangle(BaseGeometry):
-    def __init__(self, width, height):
-        """
-        Initializes a Rectangle instance with given width and height.
+    """ rectangle class inherits from basegeometry """
 
-        Args:
-            width (int): The width of the rectangle (must be a positive integer).
-            height (int): The height of the rectangle (must be a positive integer).
-        """
-        self.__width = self.integer_validator("width", width)
-        self.__height = self.integer_validator("height", height)
+    def __init__(self, width, height):
+        """ initialization """
+        super().integer_validator("height", height)
+        super().integer_validator("width", width)
+        self.__height = height
+        self.__width = width
 
     def area(self):
-        """
-        Computes the area of the rectangle.
-
-        Returns:
-            int: The area of the rectangle.
-        """
+        """ returns the area of the rectangle """
         return self.__width * self.__height
+
+    def __str__(self):
+        """ returns [Rectangle] <width>/<height> string """
+        a = str(self.__width)
+        b = str(self.__height)
+        return "[" + __class__.__name__ + "] " \
+            + a + "/" + b
