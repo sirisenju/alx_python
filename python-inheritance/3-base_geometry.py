@@ -1,11 +1,26 @@
 #!/usr/bin/python3
+
 """
-    empty class BaseGeometry
+This module defines a function to check if object is exactly an instance of a specified class.
+
+Function:
+    is_same_class(obj, a_class): Checks if object is exactly an instance of the specified class.
+
 """
 
 
 class BaseGeometry:
-    """ BaseGeometry class empty """
+    """
+    This is an empty class representing our base geometry.
+
+    It can be used as a base class to create other geometry-related classes.
+
+    Attributes:
+        None
+
+    Methods:
+        None
+    """
 
     def __dir__(self):
         """
