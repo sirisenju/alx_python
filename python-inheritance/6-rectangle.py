@@ -1,41 +1,83 @@
 #!/usr/bin/python3
-"""
-    class Rectangle that inherits from BaseGeometry
-    (7-base_geometry.py). (task based on 8-rectangle.py)
 
-    Instantiation with width and height: def
-    __init__(self, width, height)::
-        width and height must be private.
-        No getter or setter
-        width and height must be positive
-        integers validated by integer_validator
-    the area() method must be implemented
-    print() should print, and str() should return,
-    the following rectangle description:
-    [Rectangle] <width>/<height>
+"""
+This module defines a function to check if object is exactly an instance of a specified class.
+
+Function:
+    is_same_class(obj, a_class): Checks if object is exactly an instance of the specified class.
+
 """
 
 
-BaseGeometry = __import__('7-base_geometry').BaseGeometry
+class BaseGeometry:
+    """
+    This is a class representing the base geometry.
+
+    It can be used as a base class to create other geometry-related classes.
+
+    Attributes:
+        None
+
+    Methods:
+        area(self):Raises an Exception with the message "area() is not implemented".
+        integer_validator(self, name, value): Validates the value as an integer and raises exceptions if invalid.
+    """
+
+    def area(self):
+        """
+        Raises an Exception with the message "area() is not implemented".
+
+        This method needs to be implemented in the subclass to calculate
+        the area of the specific geometry.
+        """
+        raise Exception("area() is not implemented")
+
+    def integer_validator(self, name, value):
+        """
+        Validates the value as an integer and raises exceptions if invalid.
+
+        Parameters:
+            name (str): The name of the value to be validated.
+            value: The value to be validated.
+
+        Raises:
+            TypeError, if the value is not an integer.
+            ValueError, if the value is <= 0.
+
+        Returns:
+            None
+        """
+        if not isinstance(value, int):
+            raise TypeError("{} must be an integer".format(name))
+        if value <= 0:
+            raise ValueError("{} must be greater than 0".format(name))
 
 
 class Rectangle(BaseGeometry):
-    """ rectangle class inherits from basegeometry """
+    """
+    This class represents a Rectangle.
+
+    It inherits from the BaseGeometry class.
+
+    Attributes:
+        __width (int): The width of the rectangle.
+        __height (int): The height of the rectangle.
+    """
 
     def __init__(self, width, height):
-        """ initialization """
-        super().integer_validator("height", height)
-        super().integer_validator("width", width)
-        self.__height = height
+        """
+        Initialize the Rectangle with width and height.
+
+        Parameters:
+            width (int): The width of the rectangle.
+            height (int): The height of the rectangle.
+
+        Raises:
+            TypeError, if width or height is not an integer.
+            ValueError, ff width or height is <=.
+        """
+        
         self.__width = width
-
-    def area(self):
-        """ returns the area of the rectangle """
-        return self.__width * self.__height
-
-    def __str__(self):
-        """ returns [Rectangle] <width>/<height> string """
-        a = str(self.__width)
-        b = str(self.__height)
-        return "[" + __class__.__name__ + "] " \
-            + a + "/" + b
+        self.__height = height
+        self.integer_validator("width", self.__width)
+        self.integer_validator("height", self.__height)
